@@ -1,11 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Animation</title>
+  <link rel="stylesheet" href="css.css">
 </head>
 <body>
-    <h1>Hola mundo</h1>
+  <div class="container">
+    <label class="switch">
+      <input type="checkbox" id="toggleSwitch">
+      <span class="slider"></span>
+    </label>
+
+    <button class="bt">
+      <div class="light-holder">
+        <div class="dot"></div>
+        <div class="light"></div>
+      </div>
+      <div class="button-holder">
+        <img src="image.png" alt="Imagen">
+        <p id="text">Hola Mundo, soy Angel Jhovany</p>
+      </div>
+    </button>
+  </div>
+
+  <script>
+    document.getElementById('toggleSwitch').addEventListener('change', function() {
+      const button = document.querySelector('.bt');
+      const light = document.querySelector('.light');
+      
+      if (this.checked) {
+        // Muestra el botón y la luz en forma de triángulo
+        button.style.opacity = '1';
+        light.style.opacity = '1';
+      } else {
+        // Oculta el botón y la luz
+        button.style.opacity = '0';
+        light.style.opacity = '0';
+      }
+    });
+  </script>
 </body>
 </html>
